@@ -1,0 +1,1 @@
+This program aims to determine the number of seasons and episodes you have of every tv show in your digitally saved library.  The program assumes that you have saved your television shows in the format /anydirectory/tvshows/ShowsByName/Seasons/Episodes.  Not yet fully working.
