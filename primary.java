@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class primary{
     public static void main(String[] args){
         Scanner console = new Scanner(System.in);
+        System.out.println("Enter your tv program directory, this program assumes your tv directory contains show directories, your show directories contain season directories, and your season directories contain episodes.");
         String directoryInput = console.nextLine();
 
         File directory = new File(directoryInput); // replace with your directory
@@ -26,8 +27,8 @@ public class primary{
             System.out.println(directory + " does not exist or is not a directory");
         }
 
+        System.out.println("Select which show, by number");
         int ShowNum = console.nextInt();
-
         File[] Seasons = Shows[ShowNum].listFiles();
         
         if (Seasons != null) {
@@ -43,25 +44,26 @@ public class primary{
             System.out.println(directory + " does not exist or is not a directory");
         }
 
+        System.out.println("Select which season, by number");
         int SeasonNum = console.nextInt();
         File[] Episodes = Seasons[SeasonNum].listFiles();
         
+        if (Episodes != null){
+            int count = Episodes.length;
+            System.out.println(count);
+
+        }
+
+        /* 
         if (Episodes != null) {
             for (File file : Episodes) {
-                
-                if (file=true) {
-                    z++;
-                    System.out.println(z+" "+file.getName());
-                }
+                z++;
+                System.out.println(z+" "+file.getName());
             }
-        } 
+        } */
         else {
             System.out.println(directory + " does not exist or is not a directory");
         }
         //These repeated functions can definitely be resolved to one function
-
-
-
-
     }
 }
