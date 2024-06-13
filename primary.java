@@ -58,7 +58,7 @@ public class primary{
         else {
             System.out.println(directory + " does not exist or is not a directory");
         }
-
+        //These repeated functions can definitely be resolved to one function
 
 
 
