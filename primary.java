@@ -8,13 +8,7 @@ public class primary{
         System.out.println("Enter your tv program directory, this program assumes your tv directory contains show directories, your show directories contain season directories, and your season directories contain episodes.");
         String directoryInput = console.nextLine();
 
-        File directory = new File(directoryInput); 
-        File[] Shows = directory.listFiles();
-
-        int i=0;
-        
-        int z=0;
-
+        printChildFiles(getChildFiles(directoryInput));
 
         /* 
         if (Shows != null) {//if there are shows
@@ -76,6 +70,28 @@ public class primary{
         File[] Files = directoryInput.listFiles();
         return Files;
     }
-    
-    
+
+    static File[] getMultipleChildFiles(File[] Files){
+        
+        return Files;
+    }
+
+    static int printChildFiles(File[] Files){
+        if (Files != null) {
+            for (File file : Files) {
+                if (file.isDirectory()) {
+                    System.out.println(file.getName());
+                    File[] subFiles = file.listFiles();
+                    if (subFiles != null) {
+                        for (File subFile : subFiles) {
+                            if (subFile.isDirectory()) {
+                                System.out.println("  Subdirectory: " + subFile.getName());
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        return 0;
+    }
 }
