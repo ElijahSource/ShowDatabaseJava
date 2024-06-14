@@ -65,23 +65,47 @@ public class primary{
         //These repeated functions can definitely be resolved to one function 
     }
 
-    static File[] getChildFiles(String directory) {
+    static File[] getChildFiles(String directory) {//input directory string return file array of files
         File directoryInput = new File(directory); 
         File[] Files = directoryInput.listFiles();
         return Files;
     }
 
+    /*
     static File[] getMultipleChildFiles(File[] Files){
         
+        if (Files != null) {
+            for (File file : Files) {
+                if (file.isDirectory()) {
+                    
+                    System.out.println(file.getName());
+                    File[] subFiles = file.listFiles();
+
+
+                    if (subFiles != null) {
+                        for (File subFile : subFiles) {
+                            if (subFile.isDirectory()) {
+                                System.out.println("  Subdirectory: " + subFile.getName());
+                                return subFiles;
+                            }
+                        }
+                    }
+
+                }
+            }
+        } 
         return Files;
     }
-
+*/
     static int printChildFiles(File[] Files){
         if (Files != null) {
             for (File file : Files) {
                 if (file.isDirectory()) {
+                    
                     System.out.println(file.getName());
                     File[] subFiles = file.listFiles();
+
+
                     if (subFiles != null) {
                         for (File subFile : subFiles) {
                             if (subFile.isDirectory()) {
@@ -89,9 +113,12 @@ public class primary{
                             }
                         }
                     }
+
                 }
             }
         } 
         return 0;
     }
+
+
 }
